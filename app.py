@@ -90,7 +90,7 @@ def telegram():
     return(render_template("telegram.html", r=status))
 
 @app.route("/stop_telegram",methods=["GET","POST"])
-def telegram():
+def stop_telegram():
     domain_url = 'https://dsat-ft1.onrender.com'
     # The following line is used to delete the existing webhook URL for the Telegram bot
     delete_webhook_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/deleteWebhook"
@@ -101,7 +101,7 @@ def telegram():
         status = "The telegram bot has stop."
     else:
         status = "Failed to stop the telegram bot."
-    return(render_template("telegram.html", r=status))
+    return(render_template("stop_telegram.html", r=status))
 
 @app.route("/webhook",methods=["GET","POST"])
 def webhook():
