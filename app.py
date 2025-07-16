@@ -4,6 +4,8 @@ from groq import Groq
 
 import os
 
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+
 app = Flask(__name__)
 
 @app.route("/",methods=["GET","POST"])
